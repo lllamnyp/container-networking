@@ -58,8 +58,7 @@ sudo socat TUN:$TUNNEL_IP/16,iff-up UDP:$TO_NODE_IP:9000,bind=$NODE_IP:9000 &
 echo "Setting the MTU on the tun interface"
 sudo ip link set dev tun0 mtu 1492
 
+sudo ip route add $SUBNET dev tun0 proto static metric 10000
+
 echo "Disables reverse path filtering"
-sudo bash -c 'echo 0 > /proc/sys/net/ipv4/conf/all/rp_filter'
-sudo bash -c 'echo 0 > /proc/sys/net/ipv4/conf/enp0s8/rp_filter'
-sudo bash -c 'echo 0 > /proc/sys/net/ipv4/conf/br0/rp_filter'
-sudo bash -c 'echo 0 > /proc/sys/net/ipv4/conf/tun0/rp_filter'
+sudo bash -c 'echo 2 > /proc/sys/net/ipv4/conf/all/rp_filter'

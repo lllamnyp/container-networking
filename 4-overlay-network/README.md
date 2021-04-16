@@ -16,7 +16,7 @@ vagrant up
 SSH to each node (VM) in turn, and run the setup script to create the network namespaces connected via a bridge: 
 
 ```
-vagrant ssh container-networking-[12]
+vagrant ssh 4-overlay-network-[12]
 ./setup.sh
 ```
 

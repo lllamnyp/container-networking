@@ -1,5 +1,6 @@
 CON1="con1"
 CON2="con2"
+SUBNET="10.0.0.0/24"
 if [ $(hostname) == "4-overlay-network-1" ]; then 
     NODE_IP="10.0.0.10"
     TUNNEL_IP="172.16.0.100"
